@@ -105,7 +105,7 @@ The main test file (`translator.spec.js`) loops through these cases, enters the 
 
 ## Notes
 
-- You need an internet connection to run these tests
+- Need an internet connection to run these tests
 - Tests use Chromium browser for consistency
 - Don't close the browser manually while tests are running
 - Some outputs might vary slightly due to how the translation system works
@@ -119,11 +119,8 @@ The main test file (`translator.spec.js`) loops through these cases, enters the 
 
 ## Author
 
-**Student Name:** [Your Name]  
-**Registration Number:** [Your Registration Number]  
+**Student Name:** [CHAMYA N D]  
+**Registration Number:** [IT23848184]  
 **Module:** IT3040 - ITPM  
-**Institution:** [Your University]
+**Institution:** [SLIIT]
 
-## Repository
-
-This repository is publicly accessible for evaluation purposes.
