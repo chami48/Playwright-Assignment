@@ -53,7 +53,7 @@ npm -v
 
 1. Clone this repository
 ```bash
-git clone <repository-url>
+git clone <git@github.com:chami48/Playwright-Assignment.git>
 cd <project-folder>
 ```
 
