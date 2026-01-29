@@ -283,7 +283,7 @@ module.exports = [
     name: "Output should clear when input is cleared",
     type: "NEG_UI",
     length: "S",
-    input: "mama gedhara yanavaa",
+    input: "mama iskooleta yanavaa",
     uiAction: "TYPE_THEN_CLEAR_INPUT",
     covered: "UI behavior → Input clear handling → S → Usability validation",
   },

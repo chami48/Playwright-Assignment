@@ -1,19 +1,24 @@
 const { test, expect } = require("@playwright/test");
 const cases = require("../test-data/cases");
 
-// Run only chromium safely
+// ✅ Global timeout
 test.setTimeout(120000);
 
+// ✅ Run only in chromium (optional: if you have config, you can remove this)
+test.use({ browserName: "chromium" });
+
 async function openSite(page) {
-  await page.goto("https://swifttranslator.com", {
+  // ✅ Open the exact Singlish → Sinhala page
+  await page.goto("https://www.swifttranslator.com/singlish-to-sinhala", {
     waitUntil: "domcontentloaded",
     timeout: 90000,
   });
 
-  await page.getByRole("textbox").first().waitFor({ timeout: 30000 });
+  // ✅ Wait for input to be ready
+  await page.getByRole("textbox").first().waitFor({ state: "visible", timeout: 30000 });
 }
 
-// 🔥 Working Output Selector (from your successful test)
+// ✅ Your working output selector (kept)
 function getOutputLocator(page) {
   return page
     .getByText("Sinhala", { exact: true })
@@ -22,7 +27,7 @@ function getOutputLocator(page) {
     .nth(1);
 }
 
-test.describe("SwiftTranslator - 34 Automated Test Cases", () => {
+test.describe("SwiftTranslator - Automated Test Cases", () => {
   for (const tc of cases) {
     test(`${tc.id} | ${tc.name}`, async ({ page }) => {
       await openSite(page);
@@ -30,25 +35,39 @@ test.describe("SwiftTranslator - 34 Automated Test Cases", () => {
       const inputBox = page.getByRole("textbox").first();
       const outputBox = getOutputLocator(page);
 
-      // Clear and type input
+      // ✅ Make sure elements are visible (prevents "element not visible" errors)
+      await inputBox.scrollIntoViewIfNeeded();
+      await expect(inputBox).toBeVisible();
+      await expect(inputBox).toBeEnabled();
+
+      // Output may be lower on page
+      await outputBox.scrollIntoViewIfNeeded();
+      await expect(outputBox).toBeVisible({ timeout: 30000 });
+
+      // ✅ Capture output BEFORE typing (so we can detect change)
+      const before = (await outputBox.innerText().catch(() => "")).trim();
+
+      // ✅ Clear and type input
       await inputBox.fill("");
       await inputBox.type(tc.input, { delay: 30 });
 
-      // Wait until translation appears
-      await expect(outputBox).toHaveText(/.+/, { timeout: 30000 });
+      // ✅ Wait until output changes and becomes non-empty
+      await expect.poll(
+        async () => {
+          const txt = (await outputBox.innerText().catch(() => "")).trim();
+          return txt;
+        },
+        { timeout: 30000 }
+      ).not.toBe(before);
 
       const actual = (await outputBox.innerText()).trim();
 
-      console.log(
-        `\n${tc.id}\nINPUT: ${tc.input}\nACTUAL OUTPUT: ${actual}\n`
-      );
+      console.log(`\n${tc.id}\nINPUT: ${tc.input}\nACTUAL OUTPUT: ${actual}\n`);
 
       // ✅ Validation
       if (tc.expected && tc.expected.trim() !== "") {
-        // Exact comparison if expected exists
         expect(actual).toBe(tc.expected.trim());
       } else {
-        // Baseline run – only verify output exists
         expect(actual.length).toBeGreaterThan(0);
       }
     });
