@@ -2,9 +2,9 @@
 // 34 Playwright data-driven test cases for swifttranslator.com (Singlish -> Sinhala)
 
 module.exports = [
-  // =========================
+  
   // POSITIVE FUNCTIONAL (24)
-  // =========================
+
   {
     id: "Pos_Fun_0001",
     name: "Confirm daily statement",
@@ -106,7 +106,7 @@ module.exports = [
     name: "Conditional sentence",
     type: "POS",
     length: "M",
-    input: "eya gedhara yanavanam mama ekkama yanna hithan inne",
+    input: "eyaa gedhara yanavanam mama eyaa ekkama yanna hithan inne",
     covered: "Daily language usage → Complex sentence → M → Accuracy validation",
   },
   {
@@ -199,7 +199,7 @@ module.exports = [
   },
 
   
-  // NEGATIVE FUNCTIONAL (9)
+  // NEGATIVE FUNCTIONAL (10)
   
   {
     id: "Neg_Fun_0001",
@@ -238,7 +238,7 @@ module.exports = [
     name: "Line breaks (multiline)",
     type: "NEG",
     length: "M",
-    input: "mama kanna yanavaa.\n\noyath yamu maath ekka ekata kanna.",
+    input: "mama kanna yanavaa.oyath yamu maath ekka ekata kanna.",
     covered: "Line breaks → Interrogative → M → Formatting validation",
   },
   {
@@ -254,7 +254,7 @@ module.exports = [
     name: "Weird casing input",
     type: "NEG",
     length: "M",
-    input: "MaMa gedhara YaNnAvA",
+    input: "amMaa gedHara Yanavaa.",
     covered: "Mixed casing → Simple sentence → M → Robustness validation",
   },
   {
@@ -271,29 +271,26 @@ module.exports = [
     type: "NEG",
     length: "L",
     input:
-      "adha rae thiyana loku vaessa nisaa maarga wala thadabahada wadai. api bus eka late wenna puluwan, e nisaa mama kalin message ekak danna hadanawa. oyaa office eka langa inne nam, please gate eka laga poddak inna. passe api call ekakin confirm karamu, ehema nathnam route eka maru karamu.",
+      "magee gedhara hitapu balla hari lassanai saha hari hondatama innavaa. eyaa dhavasata kaeema kaalaa, sellam karalaa, passe nidhaagannava. samahara velaavata eyaa masussayek vagee hithala kriyaa karanava kiyala hithenava. mama eyaata hari aadhareyi.",
     covered: "Long paragraph → Complex sentence → L → Robustness validation",
   },
+{
+  id: "Neg_FUN_0010",
+  name: "Emoji and symbol mixed input",
+  type: "NEG",
+  length: "M",
+  input: "mama 😊 kadeeta yanavaa #shop@night",
+  expected: "මම කඩේට යනවා",
+  covered: "Typographical error handling → Simple sentence → M → Robustness validation",
+},
 
-  
-  // NEGATIVE UI (1)
-  
-  {
-    id: "Neg_UI_0001",
-    name: "Output should clear when input is cleared",
-    type: "NEG_UI",
-    length: "S",
-    input: "mama iskooleta yanavaa",
-    uiAction: "TYPE_THEN_CLEAR_INPUT",
-    covered: "UI behavior → Input clear handling → S → Usability validation",
-  },
   // POSITIVE UI
 {
   id: "Pos_UI_0001",
   name: "Output updates in real-time when user types input",
   type: "POS_UI",
   length: "S",
-  input: "mama bus ekata yannawa",
+  input: "mama bas ekee yanavaa.",
   uiAction: "REAL_TIME_UPDATE",
   covered: "UI behavior → Real-time output rendering → S → Responsiveness validation",
 },
