@@ -18,12 +18,11 @@ The tests check:
 
 **Functional Tests (33 cases)**
 - 24 positive scenarios - things that should work correctly
-- 9 negative scenarios - testing error handling and edge cases
+- 10 negative scenarios - testing error handling and edge cases
 
 **UI Tests (2 cases)**
 - Real-time output updates
-- Clear button functionality
-
+- 
 ## Project Structure
 
 ```
