@@ -70,7 +70,7 @@ npx playwright install
 
 Run all tests:
 ```bash
-npx playwright test --project=chromium --headed
+npx playwright test 
 ```
 
 Run a specific test:
