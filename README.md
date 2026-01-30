@@ -22,7 +22,7 @@ The tests check:
 
 **UI Tests (2 cases)**
 - Real-time output updates
-- 
+
 ## Project Structure
 
 ```
