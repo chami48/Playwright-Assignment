@@ -22,7 +22,7 @@ module.exports = [
     name: "Short request",
     type: "POS",
     length: "S",
-    expected:"",
+    expected:"මට පොඩි උදව්වක් ඕනෙ.",
     input: "mata podi udhavvak oone.",
 
     covered: "Greeting / request / response → Simple sentence → S → Accuracy validation",
@@ -33,7 +33,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "suba dhavasak!",
-    expected:"",
+    expected:"සුබ දවසක්!",
     covered: "Greeting / request / response → Simple sentence → S → Accuracy validation",
   },
   {
@@ -42,6 +42,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "oyaata dhaen mokak hithenavadha?",
+    expected:"ඔයාට දැන් මොකක් හිතෙනවද?",
     covered: "Daily language usage → Interrogative (question) → S → Accuracy validation",
   },
   {
@@ -50,6 +51,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "kollaa, issarahata yanna.",
+    expected:"කොල්ලා, ඉස්සරහට යන්න.",
     covered: "Daily language usage → Imperative (command) → S → Accuracy validation",
   },
   {
@@ -58,6 +60,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "mama dhaen study karanavaa.",
+    expected:"මම දැන් study කරනවා.",
     covered: "Daily language usage → Present tense → S → Accuracy validation",
   },
   {
@@ -65,7 +68,8 @@ module.exports = [
     name: "Past tense",
     type: "POS",
     length: "S",
-    input: "api rae movie ekak baluwa.",
+    input: "api rae movie ekak baeluvaa.",
+    expected:"අපි රැ movie එකක් බැලුවා.",
     covered: "Daily language usage → Past tense → S → Accuracy validation",
   },
   {
@@ -74,6 +78,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "mama heta office yanavaa.",
+    expected:"මම හෙට office යනවා.",
     covered: "Daily language usage → Future tense → S → Accuracy validation",
   },
   {
@@ -82,6 +87,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "mata eeka karanna baee.",
+    expected:"මට ඒක කරන්න බෑ.",
     covered: "Daily language usage → Negation → S → Accuracy validation",
   },
   {
@@ -90,6 +96,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "eyaalaa dhaen enavaa.",
+    expected:"එයාලා දැන් එනවා.",
     covered: "Daily language usage → Pronoun variation → S → Accuracy validation",
   },
   {
@@ -98,6 +105,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "api poddak pahu velaa yamu.",
+    expected:"අපි පොඩ්ඩක් පහු වෙලා යමු.",
     covered: "Daily language usage → Plural form → S → Accuracy validation",
   },
   {
@@ -106,6 +114,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "mama kaeema kanna yanavaa iita passe kadeeta yanavaa.",
+    expected:"මම කෑම කන්න යනවා ඊට පස්සෙ කඩේට යනවා.",
     covered: "Daily language usage → Compound sentence → M → Accuracy validation",
   },
   {
@@ -113,7 +122,8 @@ module.exports = [
     name: "Conditional sentence",
     type: "POS",
     length: "M",
-    input: "eyaa gedhara yanavanam mama eyaa ekkama yanna hithan inne",
+    input: "eyaa gedhara yanavanam mama eyaa ekkama yanna hithan inne.",
+    expected:"එයා ගෙදර යනවනම් මම එයා එක්කම යන්න හිතන් ඉන්නේ.",
     covered: "Daily language usage → Complex sentence → M → Accuracy validation",
   },
   {
@@ -122,6 +132,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "karuNaakara magea potha balalaa vaeradhi kiyalaa dhenna puluvandha?",
+    expected:"කරුණාකර මගේ පොත බලලා වැරදි කියලා දෙන්න පුලුවන්ද?",
     covered: "Greeting / request / response → Interrogative → M → Accuracy validation",
   },
   {
@@ -130,6 +141,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "adoo, eeka maru ban. supiriyata kivvaa.",
+    expected:"අඩෝ, ඒක මරු බන්. සුපිරියට කිව්වා.",
     covered: "Slang / informal language → Imperative → S → Robustness validation",
   },
   {
@@ -138,6 +150,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "poddak inna, mama ennam.",
+    expected:"පොඩ්ඩක් ඉන්න, මම එන්නම්.",
     covered: "Word combination → Simple sentence → S → Accuracy validation",
   },
   {
@@ -145,7 +158,8 @@ module.exports = [
     name: "Repetition emphasis",
     type: "POS",
     length: "S",
-    input: "hari hari, mata theruna.",
+    input: "hari hari, mata theerunaa.",
+    expected:"හරි හරි, මට තේරුනා.",
     covered: "Word combination → Simple sentence → S → Accuracy validation",
   },
   {
@@ -153,7 +167,8 @@ module.exports = [
     name: "Segmented words",
     type: "POS",
     length: "S",
-    input: "heta api ekata  pusthakaalayata yamu.",
+    input: "heta api ekata pusthakaalayata yamu.",
+    expected:"හෙට අපි එකට පුස්තකාලයට යමු.",
     covered: "Word combination → Simple sentence → S → Accuracy validation",
   },
   {
@@ -162,6 +177,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "mama oyaagee WhatsApp ekata link eka yavannam.",
+    expected:"මම ඔයාගේ WhatsApp එකට link එක යවන්නම්.",
     covered: "Mixed Singlish + English → Future tense → M → Robustness validation",
   },
   {
@@ -170,6 +186,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "api Colombo gihin hotel ekak hoyamu.",
+    expected:"අපි Colombo ගිහින් hotel එකක් හොයමු.",
     covered: "Names / places → Simple sentence → M → Robustness validation",
   },
   {
@@ -177,7 +194,8 @@ module.exports = [
     name: "Abbreviations",
     type: "POS",
     length: "M",
-    input: "mage NIC eka saha OTP eka check karanna.",
+    input: "magee NIC eka saha OTP eka check karanna.",
+    expected:"මගේ NIC එක සහ OTP එක check කරන්න.",
     covered: "Mixed Singlish + English → Imperative → M → Robustness validation",
   },
   {
@@ -186,6 +204,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "anee! mata Rs. 4500k dhenna.",
+    expected:"අනේ! මට Rs. 4500ක් දෙන්න.",
     covered: "Numbers & punctuation → Imperative → M → Formatting validation",
   },
   {
@@ -194,6 +213,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "2026-06-02 7.30 AM pusthakaalayata enna.",
+    expected:"2026-06-02 7.30 AM පුස්තකාලයට එන්න.",
     covered: "Numbers & punctuation → Imperative → M → Formatting validation",
   },
   {
@@ -202,6 +222,7 @@ module.exports = [
     type: "POS",
     length: "M",
     input: "mata siini 2kg k ekka kiri ekak dhenna.",
+    expected:"මට සීනි 2kg ක් එක්ක කිරි එකක් දෙන්න.",
     covered: "Numbers & punctuation → Simple sentence → M → Formatting validation",
   },
 
@@ -219,11 +240,12 @@ module.exports = [
   },
   {
     id: "Neg_Fun_0002",
-    name: "Missing vowels (robustness)",
+    name: "Multiple space stress (robustness)",
     type: "NEG",
     length: "S",
-    input: "mta podi udvwk one.",
-    covered: "Missing vowels → Simple sentence → S → Robustness validation",
+    input: "mata  podi  udhavvak  oone.",
+    expected:"මට පොඩි උදව්වක් ඕනෙ.",
+    covered: "Multiple space stress → Simple sentence → S → Robustness validation",
   },
   {
     id: "Neg_Fun_0003",
@@ -231,6 +253,7 @@ module.exports = [
     type: "NEG",
     length: "S",
     input: "hetapassekathaakaramu",
+    expected:"හෙට පස්සෙ කතා කරමු",
     covered: "Joined words → Simple sentence → S → Robustness validation",
   },
   {
@@ -239,6 +262,7 @@ module.exports = [
     type: "NEG",
     length: "M",
     input: "mama   dhaen   campus   yannava.",
+    expected:"මම දැන් campus යනවා.",
     covered: "Extra spaces → Simple sentence → M → Formatting validation",
   },
   {
@@ -247,6 +271,7 @@ module.exports = [
     type: "NEG",
     length: "M",
     input: "mama kanna yanavaa.oyath yamu maath ekka ekata kanna.",
+    expected:"මම කන්න යනවා.\nඔයත් යමු මාත් එක්ක එකට කන්න.",
     covered: "Line breaks → Interrogative → M → Formatting validation",
   },
   {
@@ -255,6 +280,7 @@ module.exports = [
     type: "NEG",
     length: "M",
     input: "mama @@@ gedhara yanavaa !!!",
+    expected:"මම ගෙදර යනවා !!!",
     covered: "Symbol noise → Simple sentence → M → Robustness validation",
   },
   {
@@ -263,6 +289,7 @@ module.exports = [
     type: "NEG",
     length: "M",
     input: "amMaa gedHara Yanavaa.",
+    expected:"අම්මා ගෙදර යනවා.",
     covered: "Mixed casing → Simple sentence → M → Robustness validation",
   },
   {
@@ -271,6 +298,7 @@ module.exports = [
     type: "NEG",
     length: "M",
     input: "elaa machan, api yannavaaa ne?",
+    expected:"එල මචන්, අපි යනවා නේ?",
     covered: "Slang distortion → Interrogative → M → Robustness validation",
   },
   {
@@ -279,7 +307,8 @@ module.exports = [
     type: "NEG",
     length: "L",
     input:
-      "magee gedhara hitapu balla hari lassanai saha hari hondatama innavaa. eyaa dhavasata kaeema kaalaa, sellam karalaa, passe nidhaagannava. samahara velaavata eyaa masussayek vagee hithala kriyaa karanava kiyala hithenava. mama eyaata hari aadhareyi.",
+      "Magee gedhara hitapu ballaa hari lassanayi saha hari hoDHatama innavaa.eyaa havasata kaeema kaalaa, sellam karalaa, passe nidhaagannava.samahara velaavata eyaa masussayek vagee hithala vaeda karanava kiyala hithenava.mama eyaata hari aadhareyi.",
+    expected:"මගේ ගෙදර හිටපු බල්ලා හරි ලස්සනයි සහ හරි හොඳටම ඉන්නවා.\nඑයා හවසට කෑම කාලා, සෙල්ලම් කරලා, පස්සෙ නිදාගන්නව.\nසමහර වෙලාවට එයා මසුස්සයෙක් වගේ හිතල වැඩ කරනව කියල හිතෙනව.\nමම එයාට හරි ආදරෙයි.",
     covered: "Long paragraph → Complex sentence → L → Robustness validation",
   },
 {
@@ -288,6 +317,7 @@ module.exports = [
   type: "NEG",
   length: "M",
   input: "mama   kadeeta   yanavaa",
+  expected:"මම කඩේට යනවා",
   covered: "Extra spaces → Simple sentence → M → Formatting validation",
 },
 
@@ -298,6 +328,7 @@ module.exports = [
   type: "POS_UI",
   length: "S",
   input: "mama bas ekee yanavaa.",
+  expected:"මම බස් එකේ යනවා.",
   uiAction: "REAL_TIME_UPDATE",
   covered: "UI behavior → Real-time output rendering → S → Responsiveness validation",
 },
