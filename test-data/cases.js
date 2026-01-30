@@ -1,6 +1,8 @@
 // File: test-data/cases.js
 // 34 Playwright data-driven test cases for swifttranslator.com (Singlish -> Sinhala)
 
+const { expect } = require("@playwright/test");
+
 module.exports = [
   
   // POSITIVE FUNCTIONAL (24)
@@ -10,15 +12,19 @@ module.exports = [
     name: "Confirm daily statement",
     type: "POS",
     length: "S",
-    input: "mama daen bus ekata yanavaa.",
+    input: "mama dhaen bas ekata yanavaa.",
+    expected:"මම දැන් බස් එකට යනවා.",
     covered: "Daily language usage → Simple sentence → S → Accuracy validation",
   },
+  
   {
     id: "Pos_Fun_0002",
     name: "Short request",
     type: "POS",
     length: "S",
+    expected:"",
     input: "mata podi udhavvak oone.",
+
     covered: "Greeting / request / response → Simple sentence → S → Accuracy validation",
   },
   {
@@ -27,6 +33,7 @@ module.exports = [
     type: "POS",
     length: "S",
     input: "suba dhavasak!",
+    expected:"",
     covered: "Greeting / request / response → Simple sentence → S → Accuracy validation",
   },
   {
@@ -207,6 +214,7 @@ module.exports = [
     type: "NEG",
     length: "S",
     input: "mamagedharayanavaa",
+    expected:"මම ගෙදර යනවා",
     covered: "Typo handling → Simple sentence → S → Robustness validation",
   },
   {
@@ -276,12 +284,11 @@ module.exports = [
   },
 {
   id: "Neg_FUN_0010",
-  name: "Emoji and symbol mixed input",
+  name: "Multiple spaces stress",
   type: "NEG",
   length: "M",
-  input: "mama 😊 kadeeta yanavaa #shop@night",
-  expected: "මම කඩේට යනවා",
-  covered: "Typographical error handling → Simple sentence → M → Robustness validation",
+  input: "mama   kadeeta   yanavaa",
+  covered: "Extra spaces → Simple sentence → M → Formatting validation",
 },
 
   // POSITIVE UI
